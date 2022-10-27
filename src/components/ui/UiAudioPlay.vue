@@ -2,9 +2,9 @@
     <div class="d-flex flex-row bio-audio-con">
       <div style="flex: 1">
         <div class="d-flex ">
-          <b-link @click.prevent="startPause">
-            <i v-if="isAudioLoaded&&audioProps.isPlaying" class="bi-pause-fill" style="font-size: 1.8rem; margin-top: -10px;" />
-            <i v-else-if="isAudioLoaded&&!audioProps.isPlaying" class="bi-play-fill" style="font-size: 2rem" />
+          <b-link @click.prevent="startPause" >
+            <i v-if="isAudioLoaded&&audioProps.isPlaying" class="bi-pause-fill" style="font-size: 1.8rem;" />
+            <i v-else-if="isAudioLoaded&&!audioProps.isPlaying" class="bi-play-fill" style="font-size: 1.8rem" />
           </b-link>
           <div style="flex: 1">
             <vue-wave-surfer :src="this.audio_bio ? (this.audioFileRoot + this.audio_bio) : '/img/sample.mp3'" :options="audioOptions" ref="prosurf" @hook:mounted="audioComponentMounted">
@@ -47,7 +47,7 @@
           waveColor: '#C6C7C8',
           progressColor: "#00AFF0",
           barWidth: 4,
-          height: 100,
+          height: 43,
           responsive: true,
           hideScrollbar: true,
           barRadius: 4

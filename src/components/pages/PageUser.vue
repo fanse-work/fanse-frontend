@@ -443,7 +443,6 @@
   align-items: center;
   border-width: 1px;
   padding-left: 10px;
-  padding-top: 13px;
   background: #f5f6fa;
   border-style: inset;
   border-color: #00000014;
