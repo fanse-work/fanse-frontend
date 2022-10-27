@@ -12,7 +12,7 @@
           </div>
         </div>
       </div>
-      <div class="rounded-circle text-right position-relative" style="width: 30px;height: 30px;margin-top: 8px;">
+      <div class="rounded-circle text-right position-relative" style="width: 30px;height: 30px;margin-right: 5px;">
         <b-avatar :src="user.avatar" :text="user.initials" :to="user.url" size="30px" />
       </div>
     </div>
