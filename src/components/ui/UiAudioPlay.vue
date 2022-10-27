@@ -3,7 +3,7 @@
       <div style="flex: 1">
         <div class="d-flex ">
           <b-link @click.prevent="startPause">
-            <i v-if="isAudioLoaded&&audioProps.isPlaying" class="bi-pause-fill" style="font-size: 2rem" />
+            <i v-if="isAudioLoaded&&audioProps.isPlaying" class="bi-pause-fill" style="font-size: 1.8rem; margin-top: -10px;" />
             <i v-else-if="isAudioLoaded&&!audioProps.isPlaying" class="bi-play-fill" style="font-size: 2rem" />
           </b-link>
           <div style="flex: 1">
@@ -11,14 +11,9 @@
             </vue-wave-surfer>
           </div>
         </div>
-        <div class="pl-5 d-flex justify-content-between small" style="color: #959697">
-          <p>{{secondToMin(audioProps.currentTime)}}</p>
-          <p>{{secondToMin(audioProps.duration)}}</p>
-        </div>
       </div>
-      <div class="rounded-circle text-right position-relative" style="width: 70px; top: -10px">
-        <b-avatar :src="user.avatar" :text="user.initials" :to="user.url" size="50px" />
-        <i class="bi bi-mic-fill mic-icon"></i>
+      <div class="rounded-circle text-right position-relative" style="width: 30px;height: 30px;margin-top: 8px;">
+        <b-avatar :src="user.avatar" :text="user.initials" :to="user.url" size="30px" />
       </div>
     </div>
   </template>

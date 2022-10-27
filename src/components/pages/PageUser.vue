@@ -430,15 +430,33 @@
 }
 
 .bio-audio-con {
+  // align-items: center;
+  // border-width: 1px;
+  // padding: 10px;
+  // background: white;
+  // box-shadow: 0px 5px 14px 1px #f0f0f0;
+  // border-top-right-radius: 10px;
+  // border-bottom-right-radius: 10px;
+  // border-bottom-left-radius: 10px;
+  // position: relative;
+
   align-items: center;
   border-width: 1px;
-  padding: 10px;
-  background: white;
-  box-shadow: 0px 5px 14px 1px #f0f0f0;
+  padding-left: 10px;
+  padding-top: 13px;
+  background: #f5f6fa;
+  border-style: inset;
+  border-color: #00000014;
+  border-width: 1px;
+  box-shadow: -1px 1px 20px 1px #f0f0f078;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   position: relative;
+  height: 45px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  border-radius: 10px;
 
   /* &:before {
     content: ' ';
