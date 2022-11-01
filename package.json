@@ -1,5 +1,5 @@
 {
-  "name": "bitfan",
+  "name": "Bitfan",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -9,7 +9,6 @@
     "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\""
   },
   "dependencies": {
-    "@fanse-work/vue-record": "https://github.com/fanse-work/bio-voice-vue-record-fix#fix/safari",
     "@stripe/stripe-js": "^1.25.0",
     "@vue/composition-api": "^1.7.0",
     "axios": "^0.22.0",
@@ -39,7 +38,6 @@
     "vue-router": "^3.5.2",
     "vue-social-auth": "^1.4.9",
     "vue-video-player": "^5.0.2",
-    "vue-wave-surfer": "^1.0.1",
     "vue2-dropzone": "^3.6.0",
     "vuex": "^3.6.2"
   },
@@ -51,7 +49,7 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
-    "node-sass": "^7.0.3",
+    "node-sass": "^5.0.0",
     "sass-loader": "^10.0.5",
     "vue-cli-plugin-i18n": "~2.3.1",
     "vue-template-compiler": "^2.7.8"

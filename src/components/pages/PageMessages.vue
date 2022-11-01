@@ -3,10 +3,10 @@
     <b-col
       lg="5"
       md="12"
-      class="chats overflownone border-right"
+      class="chats border-right"
       :class="showChatId != null || isComposing ? 'd-none d-lg-block' : ''"
     >
-      <div style="max-height: 900px;">
+      <div>
         <b-row class="border-bottom sticky-top page-header bg-white">
           <div class="d-flex align-items-center w-100 mx-3">
             <b-link @click="$router.go(-1)">
@@ -125,9 +125,6 @@
 
 .empty-section{
   text-align: center;margin-top: 50%;font-weight: bold;color: #8a96a3c4;font-size: 1.2rem;line-height: 1.4rem;font-weight: 500;
-}
-.overflownone{
-  overflow-x: hidden;
 }
 .chats {
   min-height: calc(var(--vh, 1vh) * 100);
