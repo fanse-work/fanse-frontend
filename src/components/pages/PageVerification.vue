@@ -9,15 +9,7 @@
           <h5 class="text-uppercase p-0 my-3 mx-2 flex-grow-1">
             {{ $t("general.verification") }}
           </h5>
-          <div v-if="this.$store.state.currentUser.cover == null">
-          <p>Cover</p>
-          </div>
-           <div v-if="this.$store.state.currentUser.avatar == null">
-          <p>Avatar</p>
-          </div>
-           <div v-if="this.$store.state.currentUser.bio == null">
-          <p>Bio</p>
-          </div>
+          <div v-if="this.$store.state.currentUser.cover == null && this.$store.state.currentUser.avatar == null && this.$store.state.currentUser.bio == null">
           <b-button
             @click.prevent="unedit"
             variant="secondary"
@@ -28,6 +20,7 @@
           <b-button @click.prevent="action" variant="primary">{{
             !editing ? $t("general.edit") : $t("general.send")
           }}</b-button>
+          </div>
         </div>
       </b-row>
       <b-row>
@@ -64,6 +57,16 @@
           <b-alert show variant="secondary" v-if="editing">{{
             $t("general.verification-info")
           }}</b-alert>
+          <b-alert
+            show
+            :variant="
+              this.$store.state.currentUser.cover == null || this.$store.state.currentUser.avatar == null || this.$store.state.currentUser.bio == null
+                ? 'secondary'
+                : 'danger'
+            "
+            v-if="!editing"
+            >{{ $t("general.verification-status", [getStatus()]) }}</b-alert
+          >
           <b-alert
             show
             :variant="
