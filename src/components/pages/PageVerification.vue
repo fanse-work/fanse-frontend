@@ -12,7 +12,7 @@
           <b-button
             @click.prevent="unedit"
             variant="secondary"
-            v-if="verification && editing"
+            v-if="verification && editing  "
             class="mr-2"
             >{{ $t("general.cancel") }}</b-button
           >
@@ -179,6 +179,7 @@ export default {
     return {
       errors: {},
       localVerification: this.verification,
+      cover: this.verification ? this.$store.state.currentUser.cover :null,
       first_name: this.verification
         ? this.verification.info.first_name
         : this.$store.state.currentUser.name,
