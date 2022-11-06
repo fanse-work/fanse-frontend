@@ -9,10 +9,13 @@
           <h5 class="text-uppercase p-0 my-3 mx-2 flex-grow-1">
             {{ $t("general.verification") }}
           </h5>
+          <div v-if="this.$store.state.currentUser.cover == null ">
+          <p>LOVE</p>
+          </div>
           <b-button
             @click.prevent="unedit"
             variant="secondary"
-            v-if="verification && editing  "
+            v-if="verification && editing "
             class="mr-2"
             >{{ $t("general.cancel") }}</b-button
           >
