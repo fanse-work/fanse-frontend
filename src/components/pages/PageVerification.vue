@@ -57,6 +57,15 @@
           <b-alert show variant="secondary" v-if="editing">{{
             $t("general.verification-info")
           }}</b-alert>
+           <b-alert show variant="danger" v-if="this.$store.state.currentUser.cover == null">{{
+            $t("general.verification-cover")
+          }}</b-alert>
+          <b-alert show variant="danger" v-if="this.$store.state.currentUser.avatar == null">{{
+            $t("general.verification-bio")
+          }}</b-alert>
+          <b-alert show variant="danger" v-if="this.$store.state.currentUser.bio == null">{{
+            $t("general.verification-avatar")
+          }}</b-alert>
           <b-alert
             show
             :variant="
@@ -65,7 +74,7 @@
                 : 'danger'
             "
             v-if="!editing"
-            >{{ $t("general.verification-status", [getStatus()]) }}</b-alert
+            >{{ $t("general.verification-status-bio-cover-avatar", [getStatus()]) }}</b-alert
           >
           <b-alert
             show
