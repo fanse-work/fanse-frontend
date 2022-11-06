@@ -9,8 +9,14 @@
           <h5 class="text-uppercase p-0 my-3 mx-2 flex-grow-1">
             {{ $t("general.verification") }}
           </h5>
-          <div v-if="this.$store.state.currentUser.cover == null ">
-          <p>LOVE</p>
+          <div v-if="this.$store.state.currentUser.cover == null">
+          <p>Cover</p>
+          </div>
+           <div v-if="this.$store.state.currentUser.avatar == null">
+          <p>Avatar</p>
+          </div>
+           <div v-if="this.$store.state.currentUser.bio == null">
+          <p>Bio</p>
           </div>
           <b-button
             @click.prevent="unedit"
@@ -182,7 +188,6 @@ export default {
     return {
       errors: {},
       localVerification: this.verification,
-      cover: this.verification ? this.$store.state.currentUser.cover :null,
       first_name: this.verification
         ? this.verification.info.first_name
         : this.$store.state.currentUser.name,
