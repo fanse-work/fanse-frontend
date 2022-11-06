@@ -60,10 +60,10 @@
            <b-alert show variant="danger" v-if="this.$store.state.currentUser.cover == null">{{
             $t("general.verification-cover")
           }}</b-alert>
-          <b-alert show variant="danger" v-if="this.$store.state.currentUser.avatar == null">{{
+          <b-alert show variant="danger" v-if="this.$store.state.currentUser.bio == null">{{
             $t("general.verification-bio")
           }}</b-alert>
-          <b-alert show variant="danger" v-if="this.$store.state.currentUser.bio == null">{{
+          <b-alert show variant="danger" v-if="this.$store.state.currentUser.avatar == null">{{
             $t("general.verification-avatar")
           }}</b-alert>
           <b-alert
