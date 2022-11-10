@@ -73,14 +73,14 @@
             v-for="(item, key) in post.media"
             :key="key"
           >
-            <object v-if="item.type == 0" data="{{item.url.substr(0, file.lastIndexOf('.')) + '.webp'}}">
-              <img 
+            <img 
                 v-if="item.type == 0"
-                :src="item.url"
+                :src="{{item.url.substr(0, file.lastIndexOf('.')) + '.webp'}}"
+                originalSrc="{{item.url}}"
                 @click.prevent="$showPhotoSwipe(post.media, item.id)"
                 onContextMenu="return false;" 
-              />
-            </object>
+                @error="imageLoadError"
+             />
             <div v-else-if="item.type == 1" class="video w-100">
               <video
                 ref="video"
@@ -585,6 +585,10 @@ export default {
         user: this.post.user,
       });
     },
+    imageLoadError (e) {
+      console.log('Image failed to load');
+      e.target.src = e.target.getAttribute("originalSrc")
+    }
   },
 };
 </script>
