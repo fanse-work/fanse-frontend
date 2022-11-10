@@ -80,7 +80,7 @@
                 @click.prevent="$showPhotoSwipe(post.media, item.id)"
                 onContextMenu="return false;" 
               />
-            </object
+            </object>
             <div v-else-if="item.type == 1" class="video w-100">
               <video
                 ref="video"
