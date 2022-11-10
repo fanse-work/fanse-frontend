@@ -3,15 +3,15 @@
   <layout-landing v-else />
 </template>
 <script>
-const LayoutAuthorized = () => { import("./LayoutAuthorized.vue") };
-const LayoutLanding = () => { import("./LayoutLanding.vue") };
+import LayoutAuthorized from "./LayoutAuthorized.vue";
+import LayoutLanding from "./LayoutLanding.vue";
 export default {
   computed: {
     isLoggedIn: function () {
       return this.$store.state.token != null;
     },
   },
-  components: this.isLoggedIn ? { LayoutAuthorized, LayoutLanding } : {LayoutLanding},
+  components: { LayoutAuthorized, LayoutLanding },
   mounted() {
     if (this.isLoggedIn) {
       this.$get(
