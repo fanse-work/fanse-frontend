@@ -73,7 +73,7 @@
             v-for="(item, key) in post.media"
             :key="key"
           >
-            <object v-if="item.type == 0" data="{{item.url.substr(0, file.lastIndexOf(".")) + '.webp'}}">
+            <object v-if="item.type == 0" data="{{item.url.substr(0, file.lastIndexOf('.')) + '.webp'}}">
               <img 
                 v-if="item.type == 0"
                 :src="item.url"
