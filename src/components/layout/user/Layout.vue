@@ -11,7 +11,7 @@ export default {
       return this.$store.state.token != null;
     },
   },
-  components: this.isLoggedIn ? { LayoutAuthorized, LayoutLanding } : {LayoutLanding},
+  components: { LayoutAuthorized, LayoutLanding },
   mounted() {
     if (this.isLoggedIn) {
       this.$get(
