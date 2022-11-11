@@ -75,7 +75,7 @@
           >
             <img 
                 v-if="item.type == 0"
-                :src="item.url.substr(0, file.lastIndexOf('.')) + '.webp'"
+                :src="item.url.substr(0, item.url.lastIndexOf('.')) + '.webp'"
                 originalSrc="{{item.url}}"
                 @click.prevent="$showPhotoSwipe(post.media, item.id)"
                 onContextMenu="return false;" 
@@ -586,7 +586,7 @@ export default {
       });
     },
     imageLoadError (e) {
-      console.log('Image failed to load');
+      console.log('Image failed to load:' + e.target.src);
       e.target.src = e.target.getAttribute("originalSrc");
     },
   },
