@@ -76,7 +76,7 @@
             <img 
                 v-if="item.type == 0"
                 :src="getWebp(item.url)"
-                originalSrc="{{item.url}}"
+                :originalSrc="item.url"
                 @click.prevent="$showPhotoSwipe(post.media, item.id)"
                 onContextMenu="return false;" 
                 @error="imageLoadError"
@@ -102,7 +102,7 @@
         <img onContextMenu="return false;" 
           v-if="post.media[0].type == 0"
           :src="getWebp(post.media[0].url)"
-          originalSrc="{{post.media[0].url}}"
+          :originalSrc="post.media[0].url"
           @click.prevent="$showPhotoSwipe(post.media, 0)"
           @error="imageLoadError"         
         />
