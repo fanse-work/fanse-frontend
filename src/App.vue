@@ -14,7 +14,7 @@
 </template>
 <script>
 import UiAddToList from "./components/ui/UiAddToList.vue";
-import UiBuy from "./components/ui/UiBuy.vue";
+const UiBuy = import("./components/ui/UiBuy.vue");
 import UiCookies from "./components/ui/UiCookies.vue";
 import UiPhotoSwipe from "./components/ui/UiPhotoSwipe.vue";
 import Pusher from "pusher-js";

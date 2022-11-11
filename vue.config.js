@@ -6,6 +6,10 @@ module.exports = {
       localeDir: 'locales',
       enableInSFC: false,
       enableBridge: false
+    },
+    critical: {
+      width: 375,
+      height: 565    
     }
   },
   pwa: {
