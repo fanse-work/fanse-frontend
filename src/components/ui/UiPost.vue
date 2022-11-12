@@ -74,11 +74,13 @@
             :key="key"
           >
             <img 
-              v-if="item.type == 0"
-              :src="item.url"
-              @click.prevent="$showPhotoSwipe(post.media, item.id)"
-              onContextMenu="return false;" 
-            />
+                v-if="item.type == 0"
+                :src="getWebp(item.url)"
+                :originalSrc="item.url"
+                @click.prevent="$showPhotoSwipe(post.media, item.id)"
+                onContextMenu="return false;" 
+                @error="imageLoadError"
+             />
             <div v-else-if="item.type == 1" class="video w-100">
               <video
                 ref="video"
@@ -99,9 +101,10 @@
       <div v-else class="w-100">
         <img onContextMenu="return false;" 
           v-if="post.media[0].type == 0"
-          :src="post.media[0].url"
+          :src="getWebp(post.media[0].url)"
+          :originalSrc="post.media[0].url"
           @click.prevent="$showPhotoSwipe(post.media, 0)"
-         
+          @error="imageLoadError"         
         />
         <div v-else-if="post.media[0].type == 1" class="video w-100">
           <video
@@ -584,6 +587,13 @@ export default {
         post: this.post,
         user: this.post.user,
       });
+    },
+    getWebp(originalSrc){
+      return originalSrc.substr(0, originalSrc.lastIndexOf('.')) + '.webp'
+    },
+    imageLoadError (e) {
+      console.log('Image failed to load:' + e.target.src);
+      e.target.src = e.target.getAttribute("originalSrc");
     },
   },
 };
