@@ -60,7 +60,7 @@
       <b-link to="/signup">{{ $t("general.create-new-account") }}</b-link>
     </div>
     <div class="text-center  d-block w-100" style="margin-bottom:20px;">
-    <img src="@/assets/users.webp" with=240 height=80 alt="STFU | Support Creators Content" class="desktop-img logo align-baseline mb-1">
+    <img src="@/assets/users.webp" with=240 height=80 alt="STFU | Support Creators Content" class="desktop-img users logo align-baseline mb-1">
     </div>
 
     
