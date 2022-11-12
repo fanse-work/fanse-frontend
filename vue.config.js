@@ -1,4 +1,37 @@
 module.exports = {
+  configureWebpack: {
+    optimization: {
+      splitChunks: {
+        chunks: 'all',
+        minSize: 1000,
+        // minRemainingSize: 0,
+        maxSize: 2000000,
+        minChunks: 1,
+        maxAsyncRequests: 30,
+        maxInitialRequests: 30,
+        enforceSizeThreshold: 50000,
+        cacheGroups: {
+          defaultVendors: {
+            test: /[\\/]node_modules[\\/]/,
+            priority: -10,
+            reuseExistingChunk: true
+          },
+          default: {
+            minChunks: 2,
+            priority: -20,
+            reuseExistingChunk: true
+          },
+          // vendor: {
+          //   test: /[\\/]node_modules[\\/]/,
+          //   name(module) {
+          //     const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
+          //     return `npm.${packageName.replace('@', '')}`;
+          //   },
+          // },
+        }
+      }
+    },
+  },
   pluginOptions: {
     i18n: {
       locale: 'en',
