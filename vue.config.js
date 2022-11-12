@@ -1,9 +1,5 @@
 module.exports = {
   pluginOptions: {
-    critical: {
-      width: 375,
-      height: 565    
-    },
     i18n: {
       locale: 'en',
       fallbackLocale: 'en',
