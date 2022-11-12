@@ -20,7 +20,7 @@
     </g>
 </svg></div>
     <button @click="AuthProvider('google')" class="btn btn-lg btn-block" style="border: solid 1px #CED4DA;border-radius: 30px;">
-      <img width="30px" style="float:left" alt="Google login" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+      <img width="30px" height="30px" style="float:left" alt="Google login" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
       <div style="font-size: 1rem;">Sign In With Google</div>
     </button>
     <small class="btn-block text-center my-3 text-uppercase or">or</small>
@@ -60,7 +60,7 @@
       <b-link to="/signup">{{ $t("general.create-new-account") }}</b-link>
     </div>
     <div class="text-center  d-block w-100" style="margin-bottom:20px;">
-    <img src="@/assets/users.webp" alt="STFU | Support Creators Content" class="desktop-img logo align-baseline mb-1">
+    <img src="@/assets/users.webp" with=230 height=77 alt="STFU | Support Creators Content" class="desktop-img logo align-baseline mb-1">
     </div>
 
     
