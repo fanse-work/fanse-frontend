@@ -119,10 +119,10 @@ color:#bcb8b8;
 .desktop-img{
 width: 65%;
 }
-  .desktop-img.users{
-    width: 65%;
-    height: auto;
-  }
+}
+
+img.users{
+  height: auto !important;
 }
 
 </style>
