@@ -1,5 +1,9 @@
 module.exports = {
   pluginOptions: {
+    critical: {
+      width: 375,
+      height: 565    
+    },
     i18n: {
       locale: 'en',
       fallbackLocale: 'en',
@@ -7,9 +11,8 @@ module.exports = {
       enableInSFC: false,
       enableBridge: false
     },
-    critical: {
-      width: 375,
-      height: 565    
+    webpackBundleAnalyzer: {
+        analyzerMode: "disabled"
     }
   },
   pwa: {
