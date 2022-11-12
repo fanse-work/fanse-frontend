@@ -68,7 +68,12 @@
 </style>
 <script>
 import Cursor from 'wavesurfer.js/dist/plugin/wavesurfer.cursor'
+import VueWaveSurfer from "vue-wave-surfer";
+
 export default {
+  components: {
+    VueWaveSurfer
+  },
   props: [
     'label',
     'user',

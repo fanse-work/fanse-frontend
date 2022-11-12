@@ -14,10 +14,10 @@
 </template>
 <script>
 import UiAddToList from "./components/ui/UiAddToList.vue";
-const UiBuy = import("./components/ui/UiBuy.vue");
+import UiBuy from "./components/ui/UiBuy.vue";
 import UiCookies from "./components/ui/UiCookies.vue";
-import UiPhotoSwipe from "./components/ui/UiPhotoSwipe.vue";
-import Pusher from "pusher-js";
+const UiPhotoSwipe = import("./components/ui/UiPhotoSwipe.vue");
+const getPusher = () => import('pusher-js');
 export default {
   components: { UiPhotoSwipe, UiAddToList, UiBuy, UiCookies },
   computed: {
@@ -31,8 +31,14 @@ export default {
       return this.$store.state.currentUser;
     },
   },
+  data: function () {
+    return {
+      Pusher: null
+    }
+  },
   mounted() {
     this.listen();
+    getPusher().then(pusher => this.Pusher = pusher);
   },
   watch: {
     currentUser() {
@@ -44,8 +50,8 @@ export default {
       this.$store.state.swiperItems = [];
     },
     listen() {
-      if (this.currentUser) {
-        this.$store.state.pusher = new Pusher(
+      if (this.currentUser && this.Pusher) {
+        this.$store.state.pusher = new this.Pusher(
           process.env.VUE_APP_PUSHER_APP_KEY,
           {
             cluster: process.env.VUE_APP_PUSHER_APP_CLUSTER,

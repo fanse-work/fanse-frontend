@@ -297,12 +297,13 @@
 <script>
 import { Swiper } from "swiper";
 import "swiper/swiper-bundle.css";
-import videojs from "video.js";
+// import videojs from "video.js";
 import User from "../models/User";
 import "video.js/dist/video-js.css";
 import Post from "../models/Post";
 import Payment from "../models/Payment";
 import UiUsername from "./UiUsername.vue";
+const getVideojs = () => import('video.js');
 export default {
   components: { UiUsername },
   data: function () {
@@ -358,7 +359,8 @@ export default {
     },
   },
   methods: {
-    init() {
+    async init() {
+      const videojs = await getVideojs();
       var that = this;
       if (that.$refs.swiper) {
         let s = new Swiper(that.$refs.swiper, {

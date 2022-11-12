@@ -11,7 +11,7 @@
         </b-form-checkbox>
       </div> -->
       <div class="d-flex align-items-center" style="background-color: #f5f6fa;padding: 5px;border-radius: 10px;">
-        <VueRecordAudio v-if="!isStreamed" :mode="recMode" @stream="onStream" @result="onResult" />
+        <vue-record-audio v-if="!isStreamed" :mode="recMode" @stream="onStream" @result="onResult" />
         <div v-if="isStreamed || isSaved" class="px-3">
           <b-link @click.prevent="startPause">
             <i v-if="isAudioLoaded&&audioProps.isPlaying" class="bi-pause-fill" style="font-size: 2rem;" />
@@ -75,7 +75,13 @@
   <script>
   import axios from "axios";
   import Cursor from 'wavesurfer.js/dist/plugin/wavesurfer.cursor';
+  import VueWaveSurfer from "vue-wave-surfer";
+  import { VueRecordAudio } from '@fanse-work/vue-record';
   export default {
+    components: {
+      VueRecordAudio,
+      VueWaveSurfer
+    },
     props: [
       "label",
       "name",

@@ -7,9 +7,9 @@ module.exports = {
       enableInSFC: false,
       enableBridge: false
     },
-    webpackBundleAnalyzer: {
-        analyzerMode: "disabled"
-    }
+    // webpackBundleAnalyzer: {
+    //   openAnalyzer: false
+    // }
   },
   pwa: {
     manifestOptions: {
